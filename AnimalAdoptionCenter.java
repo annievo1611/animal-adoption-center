@@ -1,5 +1,4 @@
 /**
-* Name: An Vo
 * Date: 12-11
 * Description: Main program that allows users to adopt a pet. 
 * 			   Users can see a list of available animals, see what they can do, and adopt them by paying a fee.
