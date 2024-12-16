@@ -13,7 +13,7 @@ public class AnimalAdoptionCenter {
 
 		// make BOLD outputs
 		final String BOLD = "\033[1m";
-        final String RESET = "\033[0m";
+        	final String RESET = "\033[0m";
         
 		Scanner input = new Scanner(System.in);
 		Print print = new Print();
@@ -36,92 +36,87 @@ public class AnimalAdoptionCenter {
                 System.out.println(BOLD + "Available " + options[animalType - 1] + ":" + RESET);
 			
 				// get and print the appropriate animal list
-	            switch (animalType) {
-	                case 1: print.printDogs(); break;
-	                case 2: print.printCats(); break;
-	                case 3: print.printOthers(); break;
-	                default: 
-	                	System.out.println("INVALID choice. Please try again.");
-	                	continueProgram = false;
-	                	break;
-	            }
+		        switch (animalType) {
+					case 1: print.printDogs(); break;
+					case 2: print.printCats(); break;
+					case 3: print.printOthers(); break;
+					default: 
+						System.out.println("INVALID choice. Please try again.");
+						continueProgram = false;
+						break;
+				}
 	            
-	            // prompt for choice
-	            int choice = -1;
-	            int listLength;
-	            if (animalType == 1) {
-	                listLength = print.getDogs().length;
-	            } else if (animalType == 2) {
-	                listLength = print.getCats().length;
-	            } else {
-	                listLength = print.getOthers().length;
-	            }
+				// prompt for choice
+				int choice = -1;
+				int listLength;
+				if (animalType == 1) {
+					listLength = print.getDogs().length;
+				} else if (animalType == 2) {
+					listLength = print.getCats().length;
+				} else {
+					listLength = print.getOthers().length;
+				}
 	            
-	            while (choice < 0 || choice > listLength) {
-	                System.out.print(BOLD + "\nWhich one would you like more information about: " + RESET);
-	                choice = input.nextInt();
-	                if (choice < 0 || choice > listLength) {
-	                    System.out.println("INVALID choice! Please try again.\n");
-	                }
-	            }
-	            // print information of the chosen animal
-	            if (choice > 0) {
-	            	switch (animalType) {
-		            	 case 1: 
-		            		 print.infoDog(choice);
-		            		 break;
-		            	 case 2: 
-		            		 print.infoCat(choice);
-		            		 break;
-		            	 case 3: 
-		            		 print.infoOther(choice);
-		            		 break;
-	            	 }
+				while (choice < 0 || choice > listLength) {
+					System.out.print(BOLD + "\nWhich one would you like more information about: " + RESET);
+					choice = input.nextInt();
+					if (choice < 0 || choice > listLength) {
+						System.out.println("INVALID choice! Please try again.\n");
+					}
+				}
+			        
+				// print information of the chosen animal
+			    if (choice > 0) {
+					switch (animalType) {
+						case 1: print.infoDog(choice); break;
+				 		case 2: print.infoCat(choice); break;
+				 		case 3: print.infoOther(choice); break;
+				 	}
 	            
-	            	// Perform actions
-		            int action = 4;
-		            do {
-		                System.out.println(BOLD + "\nWhat " + (action != 4 ? "else " : "") + "do you want to do?" + RESET);
-		                System.out.println("1. Make sound\n" +
-		                        "2. Jump around\n" +
-		                        "3. Do a trick\n" +
-		                        "4. Continue adopting\n");
-		                System.out.print("Enter your choice (1-4): ");
-		                action = input.nextInt();
-		                System.out.println();
+					// Perform actions
+					int action = 4;
+					do {
+						System.out.println(BOLD + "\nWhat " + (action != 4 ? "else " : "") + "do you want to do?" + RESET);
+						System.out.println("1. Make sound\n" +
+										   "2. Jump around\n" +
+										   "3. Do a trick\n" +
+										   "4. Continue adopting\n");
+						System.out.print("Enter your choice (1-4): ");
+						action = input.nextInt();
+						System.out.println();
 		                
 		                switch(action) {
 			                case 1: {
 			                	switch(animalType) {
-			                	case 1: print.getDog(choice - 1).makeSound(); break;
-			                    case 2: print.getCat(choice - 1).makeSound(); break;
-			                    case 3: print.getOther(choice - 1).makeSound(); break;
+				                	case 1: print.getDog(choice - 1).makeSound(); break;
+				                    case 2: print.getCat(choice - 1).makeSound(); break;
+				                    case 3: print.getOther(choice - 1).makeSound(); break;
 			                	}
 			                	break;
 			                }
 			                case 2: {
 			                	switch(animalType) {
-			                	case 1: print.getDog(choice - 1).jumpAround(); break;
-			                    case 2: print.getCat(choice - 1).jumpAround(); break;
-			                    case 3: print.getOther(choice - 1).jumpAround(); break;
+				                	case 1: print.getDog(choice - 1).jumpAround(); break;
+				                    case 2: print.getCat(choice - 1).jumpAround(); break;
+				                    case 3: print.getOther(choice - 1).jumpAround(); break;
 			                	}
 			                	break;
 			                }
 			                case 3: {
 			                	String[] tricks;
 			                	switch(animalType) {
-			                	case 1: 
-			                		tricks = print.getDog(choice - 1).doTrick();
-									System.out.println(print.getDog(choice - 1).getName() + " is " + tricks[random.nextInt(tricks.length)] + ".");
-									break;
-			                    case 2: 
-			                    	tricks = print.getCat(choice - 1).doTrick();
-									System.out.println(print.getCat(choice - 1).getName() + " is " + tricks[random.nextInt(tricks.length)] + ".");
-									break;
-			                    case 3: 
-			                    	tricks = print.getOther(choice - 1).doTrick();
-									System.out.println(print.getOther(choice - 1).getName() + " is " + tricks[random.nextInt(tricks.length)] + ".");
-									break;
+				                	case 1: 
+				                		tricks = print.getDog(choice - 1).doTrick();
+										System.out.println(print.getDog(choice - 1).getName() + " is " + tricks[random.nextInt(tricks.length)] + ".");
+										break;
+				                    case 2: 
+				                    	tricks = print.getCat(choice - 1).doTrick();
+										System.out.println(print.getCat(choice - 1).getName() + " is " + tricks[random.nextInt(tricks.length)] + ".");
+										break;
+				                    case 3: 
+				                    	tricks = print.getOther(choice - 1).doTrick();
+										System.out.println(print.getOther(choice - 1).getName() + " is " + tricks[random.nextInt(tricks.length)] + ".");
+										break;
 			                	}
 			                	break;
 			                }
@@ -160,5 +155,3 @@ public class AnimalAdoptionCenter {
 		input.close();
 	} 
 }
-
-
