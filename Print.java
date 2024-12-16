@@ -1,7 +1,6 @@
 /**
 * Date: 12-11
-* Description: Print class creates instances of Dog, Cat, and Others objects and provides methods 
-* 			   for the main program to display detailed information about them.
+* Description: Print class creates instances of Dog, Cat, and Others objects and provides methods for the main program to display detailed information about them.
 */
 
 public class Print {
