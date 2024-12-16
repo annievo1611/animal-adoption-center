@@ -1,5 +1,4 @@
 /**
-* Name: An Vo
 * Date: 12-11
 * Description: subclass Others extends Animals and implements Adoptable, 
 * 			   adding adoption status and specific implementations for sounds, actions, and adoption fees.
