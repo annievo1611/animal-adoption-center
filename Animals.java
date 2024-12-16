@@ -1,9 +1,7 @@
 /**
-* Name: An Vo
 * Date: 12-11
-* Description: abstract class Animals serves as a prototype for animal objects, 
-* 			   defining common attributes, and abstract methods that will be implemented 
-* 			   by subclasses: Dogs.jav, Cats.jav, and Others.java.
+* Description: abstract class Animals serves as a prototype for animal objects, defining common attributes, and abstract methods that 
+	       will be implemented by subclasses: Dogs.jav, Cats.jav, and Others.java.
 */
 
 public abstract class Animals {
